@@ -31,15 +31,58 @@
 4. **Optionally**, create a `main.go` or any other relevant files under the project containing blueprint of the implementation, **as long as you think it reduces confusion and keeps the implementation  focused**
 5. Submit a PR.
 
-### Using the script
+## Katas Index (Grouped)
 
-You can use the shorthand script to add a new challenge, it will create a new folder and a new README.md file under it:
-```bash
-./add.sh my-very-creative-challange
-```
-This will create a new folder `21-my-very-creative-challange` (in case the latest challange was under the folder name `20-latest-name-here`) and add a `README.md` under it
+### 01) Context, Cancellation, and Fail-Fast Concurrency
+Real-world concurrency patterns that prevent leaks, enforce backpressure, and fail fast under cancellation.
 
-```bash
-medunes@medunes:~/projects/go-kata$  ls 21-my-very-creative-challange/
-README.md
-```
+- [01 - The Fail-Fast Data Aggregator](./01-context-cancellation-concurrency/01-concurrent-aggregator/)
+- [03 - Graceful Shutdown Server](./01-context-cancellation-concurrency/03-graceful-shutdown-server/)
+- [05 - Context-Aware Error Propagator](./01-context-cancellation-concurrency/05-context-aware-error-propagator/)
+- [07 - The Rate-Limited Fan-Out Client](./01-context-cancellation-concurrency/07-rate-limited-fanout/)
+- [09 - The Cache Stampede Shield (singleflight TTL)](./01-context-cancellation-concurrency/09-single-flight-ttl-cache/)
+- [10 - Worker Pool with Backpressure and errors.Join](./01-context-cancellation-concurrency/10-worker-pool-errors-join/)
+- [14 - The Leak-Free Scheduler](./01-context-cancellation-concurrency/14-leak-free-scheduler/)
+- [17 - Context-Aware Channel Sender (No Leaked Producers)](./01-context-cancellation-concurrency/17-context-aware-channel-sender/)
+
+---
+
+### 02) Performance, Allocation, and Throughput
+Drills focused on memory efficiency, allocation control, and high-throughput data paths.
+
+- [02 - Concurrent Map with Sharded Locks](./02-performance-allocation/02-concurrent-map-with-sharded-locks/)
+- [04 - Zero-Allocation JSON Parser](./02-performance-allocation/04-zero-allocation-json-parser/)
+- [11 - NDJSON Stream Reader (Long Lines)](./02-performance-allocation/11-ndjson-stream-reader/)
+- [12 - sync.Pool Buffer Middleware](./02-performance-allocation/12-sync-pool-buffer-middleware/)
+
+---
+
+### 03) HTTP and Middleware Engineering
+Idiomatic HTTP client/server patterns, middleware composition, and production hygiene.
+
+- [06 - Interface-Based Middleware Chain](./03-http-middleware/06-interface-based-middleware-chain/)
+- [16 - HTTP Client Hygiene Wrapper](./03-http-middleware/16-http-client-hygiene/)
+
+---
+
+### 04) Errors: Semantics, Wrapping, and Edge Cases
+Modern Go error handling: retries, cleanup, wrapping, and infamous pitfalls.
+
+- [08 - Retry Policy That Respects Context](./04-errors-semantics/08-retry-backoff-policy/)
+- [19 - The Cleanup Chain (defer + LIFO + Error Preservation)](./04-errors-semantics/19-defer-cleanup-chain/)
+- [20 - The “nil != nil” Interface Trap (Typed nil Errors)](./04-errors-semantics/20-nil-interface-gotcha/)
+
+---
+
+### 05) Filesystems, Packaging, and Deployment Ergonomics
+Portable binaries, testable filesystem code, and dev/prod parity.
+
+- [13 - Filesystem-Agnostic Config Loader (io/fs)](./05-filesystems-packaging/13-iofs-config-loader/)
+- [18 - embed.FS Dev/Prod Switch](./05-filesystems-packaging/18-embedfs-dev-prod-switch/)
+
+---
+
+### 06) Testing and Quality Gates
+Idiomatic Go testing: table-driven tests, parallelism, and fuzzing.
+
+- [15 - Go Test Harness (Subtests, Parallel, Fuzz)](./06-testing-quality/15-testing-parallel-fuzz-harness/)
